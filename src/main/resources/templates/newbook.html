@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layouts/main">
+
+<head>
+
+<title>New BOOK</title>
+<link rel="stylesheet" href="css/carousel.css"
+	th:href="@{/css/carousel.css}" />
+
+</head>
+
+<body>
+
+	<div layout:fragment="content">
+		<div class="container">
+
+<fieldset>
+			<legend>Add New Book: </legend>
+			            
+            <form class="form-horizontal" th:object="${product}"  th:action="@{/register}" method="post">
+            <div class="form-group">
+                <div class="col-sm-10">
+                    <input type="hidden" class="form-control" th:field="*{id}"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Book Name:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" th:field="*{bookName}" name="bookName"  />
+                </div> <div class="col-sm-4"></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Author:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" th:field="*{author}" name="author" />
+                </div> <div class="col-sm-4"></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Purchase Date:</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" th:field="*{purchaseDate}" name="purchaseDate" />
+                </div>
+                
+                <div class="col-sm-4"></div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+
+        </form>
+        </fieldset>
+
+
+		</div>
+	</div>
+</body>
+</html>
